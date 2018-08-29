@@ -14,6 +14,7 @@
 		617513AD21338BE00056C83E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 617513AB21338BE00056C83E /* LaunchScreen.storyboard */; };
 		617513B521338C020056C83E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617513B421338C020056C83E /* Model.swift */; };
 		617513B721338C240056C83E /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617513B621338C240056C83E /* ResponseViewController.swift */; };
+		61ED735B2135A96200B860CB /* NominationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ED735A2135A96200B860CB /* NominationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +26,8 @@
 		617513AC21338BE00056C83E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		617513AE21338BE00056C83E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		617513B421338C020056C83E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-        617513B621338C240056C83E /* ResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
+		617513B621338C240056C83E /* ResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
+		61ED735A2135A96200B860CB /* NominationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NominationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				617513A421338BE00056C83E /* ViewController.swift */,
 				617513B421338C020056C83E /* Model.swift */,
 				617513A621338BE00056C83E /* Main.storyboard */,
+				61ED735A2135A96200B860CB /* NominationViewController.swift */,
 				617513B621338C240056C83E /* ResponseViewController.swift */,
 				617513A921338BE00056C83E /* Assets.xcassets */,
 				617513AB21338BE00056C83E /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				617513B521338C020056C83E /* Model.swift in Sources */,
+				61ED735B2135A96200B860CB /* NominationViewController.swift in Sources */,
 				617513B721338C240056C83E /* ResponseViewController.swift in Sources */,
 				617513A521338BE00056C83E /* ViewController.swift in Sources */,
 				617513A321338BE00056C83E /* AppDelegate.swift in Sources */,

@@ -54,9 +54,9 @@ class ResponseViewController: UIViewController {
             performSegue(withIdentifier: "goToNomination", sender: submit(self)) // 8/28
             
         } else {
+            
              nameField.text = "Enter a name and response." // 8/28
             
-    
         }
         
     }
