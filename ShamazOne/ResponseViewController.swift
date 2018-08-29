@@ -23,7 +23,7 @@ class ResponseViewController: UIViewController {
     @IBOutlet weak var promptDisplay: UILabel!
     
 // created a temporary string to hold data being passed between ViewControllers 8/27
-     var promptString = String()
+    var promptString: String = ""
     
 // textField for user to input name 8/27
     @IBOutlet weak var nameField: UITextField!
@@ -39,14 +39,24 @@ class ResponseViewController: UIViewController {
 // submit button - used for storeing user name and response 8/27
     @IBAction func submit(_ sender: Any) {
         if nameField.text != "" && responseEditor.text != "" {
-            let storedName = nameField.text
-            let storedResponse = responseEditor.text
+            let storedName = nameField.text!
+            let storedResponse = responseEditor.text!
             
 // ------- Doesnt Work! says players is [String?: String?] --------- 8/27
-            players[storedName: storedResponse]
+            names.append(storedName) // 8/28
+            responses.append(storedResponse) // 8/28
         
             // needs to update data to be stored 8/27
             
+            nameField.text = "" // 8/28
+            responseEditor.text = "" // 8/28
+            
+            performSegue(withIdentifier: "goToNomination", sender: submit(self)) // 8/28
+            
+        } else {
+             nameField.text = "Enter a name and response." // 8/28
+            
+    
         }
         
     }

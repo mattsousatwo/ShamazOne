@@ -19,7 +19,11 @@ struct Player {
 var players: [String: String] = ["": ""]
 
 
-// writting prompt arrays 8/26
+// arrays to store datat 8/28 
+var names: [String] = []
+var responses: [String] = []
+
+// writting prompt arrays 8/26        ~ need to update promts to indicate a time frame 
 let futureWrittingPrompt: [String] = ["Does humanity have a future beyond Earth?",
                                       "Where will you be next month?",
                                       "Where and when do you think we will find extraterrestrial life?",

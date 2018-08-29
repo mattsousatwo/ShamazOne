@@ -26,15 +26,15 @@ class ViewController: UIViewController {
 // sending random writting prompt to temporary String holder in ResponseViewController promptString depending upon which segue is triggered. 8/27
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "pastSegue" {
-            let vc = segue.destination as! ResponseViewController
+            let nextVC = segue.destination as! ResponseViewController
             let pastPrompt = displayPastWrittingPrompt()
-            vc.promptString = pastPrompt
+            nextVC.promptString = pastPrompt
             
         } else if segue.identifier == "futureSegue" {
             
-            let vc = segue.destination as! ResponseViewController
+            let nextVC2 = segue.destination as! ResponseViewController
             let futurePrompt = displayFutureWrittingPrompt()
-            vc.promptString = futurePrompt
+            nextVC2.promptString = futurePrompt
         }
     }
     
