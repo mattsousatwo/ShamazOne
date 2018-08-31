@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61720C2021389F5000A1B9BB /* PlayerSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61720C1F21389F5000A1B9BB /* PlayerSelectionViewController.swift */; };
+		61720C222138EBDC00A1B9BB /* PlayerSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61720C212138EBDC00A1B9BB /* PlayerSelectionModel.swift */; };
 		617513A321338BE00056C83E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617513A221338BE00056C83E /* AppDelegate.swift */; };
 		617513A521338BE00056C83E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617513A421338BE00056C83E /* ViewController.swift */; };
 		617513A821338BE00056C83E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 617513A621338BE00056C83E /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61720C1F21389F5000A1B9BB /* PlayerSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionViewController.swift; sourceTree = "<group>"; };
+		61720C212138EBDC00A1B9BB /* PlayerSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionModel.swift; sourceTree = "<group>"; };
 		6175139F21338BE00056C83E /* ShamazOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShamazOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		617513A221338BE00056C83E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		617513A421338BE00056C83E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,11 +65,13 @@
 			isa = PBXGroup;
 			children = (
 				617513A221338BE00056C83E /* AppDelegate.swift */,
+				617513A621338BE00056C83E /* Main.storyboard */,
+				61720C1F21389F5000A1B9BB /* PlayerSelectionViewController.swift */,
+				61720C212138EBDC00A1B9BB /* PlayerSelectionModel.swift */,
 				617513A421338BE00056C83E /* ViewController.swift */,
 				617513B421338C020056C83E /* Model.swift */,
-				617513A621338BE00056C83E /* Main.storyboard */,
-				61ED735A2135A96200B860CB /* NominationViewController.swift */,
 				617513B621338C240056C83E /* ResponseViewController.swift */,
+				61ED735A2135A96200B860CB /* NominationViewController.swift */,
 				617513A921338BE00056C83E /* Assets.xcassets */,
 				617513AB21338BE00056C83E /* LaunchScreen.storyboard */,
 				617513AE21338BE00056C83E /* Info.plist */,
@@ -145,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61720C2021389F5000A1B9BB /* PlayerSelectionViewController.swift in Sources */,
+				61720C222138EBDC00A1B9BB /* PlayerSelectionModel.swift in Sources */,
 				617513B521338C020056C83E /* Model.swift in Sources */,
 				61ED735B2135A96200B860CB /* NominationViewController.swift in Sources */,
 				617513B721338C240056C83E /* ResponseViewController.swift in Sources */,

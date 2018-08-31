@@ -15,10 +15,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    
-// dismiss function from responseViewController 8/26
-    @IBAction func returnToVC(sender: UIStoryboardSegue) {}
-    
 // past button 8/26
     @IBAction func pastButton(_ sender: Any) {}
        

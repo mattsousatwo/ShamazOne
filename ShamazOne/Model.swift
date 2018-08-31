@@ -10,9 +10,16 @@ import Foundation
 import GameKit
 
 // struct for player information to be stored in 8/27
-struct Player {
+class Player {
     var name: String = ""
     var response: String = ""
+                                            // 8/30   need to put in table view to use Player data otherwise we will get a warning 
+    init(name: String, response: String) {
+        self.name = name
+        self.response = response
+    }
+    
+    
 }
 
 // empty dictionary to hold player and response information 8/27
@@ -45,6 +52,9 @@ let pastWrittingPrompt: [String] = ["What did you do last summer?",
                                     "When was the last time you were shocked?",
                                     "What is your favortie sports team?"]
 
+// Universal String to store number selection  8/30
+var savedNumber = ""
+
 // generates random string from futureWrittingPrompt 8/26
 func displayFutureWrittingPrompt() -> String {
     let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: futureWrittingPrompt.count)
@@ -56,3 +66,20 @@ func displayPastWrittingPrompt() -> String {
     let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: pastWrittingPrompt.count)
     return pastWrittingPrompt[randomNumber]
 }
+
+// converts string to Int 8/30
+func stringToInt(string: String) -> Int {
+    let a: Int? = Int(string)
+    return a!
+}
+
+//changing the string value of savedNumber to Int
+var newNumber = stringToInt(string: savedNumber)
+
+// generates random number with an upperbound of selected players
+func randomNomination() -> Int {
+    let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: newNumber)
+    return randomNumber
+    
+}
+

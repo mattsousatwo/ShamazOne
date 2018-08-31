@@ -9,13 +9,24 @@
 import UIKit
 
 class NominationViewController: UIViewController {
-
+    
+// Player nomination display - 8/30
+    @IBOutlet weak var numberDisplay: UILabel!
+    
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+// setting Player Nomination display to the value of the number of players from PlayerSelectionVC - 8/30
+        numberDisplay.text = "\(randomNomination())"
+        
         // Do any additional setup after loading the view.
     }
 
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

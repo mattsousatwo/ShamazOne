@@ -31,36 +31,30 @@ class ResponseViewController: UIViewController {
     
 // text field for user to input data 8/26
     @IBOutlet weak var responseEditor: UITextField!
-
-    
     
     
     
 // submit button - used for storeing user name and response 8/27
     @IBAction func submit(_ sender: Any) {
-        if nameField.text != "" && responseEditor.text != "" {
-            let storedName = nameField.text!
-            let storedResponse = responseEditor.text!
-            
-// ------- Doesnt Work! says players is [String?: String?] --------- 8/27
-            names.append(storedName) // 8/28
-            responses.append(storedResponse) // 8/28
-        
-            // needs to update data to be stored 8/27
-            
-            nameField.text = "" // 8/28
-            responseEditor.text = "" // 8/28
-            
-            performSegue(withIdentifier: "goToNomination", sender: submit(self)) // 8/28
-            
-        } else {
-            
-             nameField.text = "Enter a name and response." // 8/28
-            
-        }
-        
     }
     
+    
+        // needs to commit
+// method to segue to nomination view only if nameField and responseEditor are not empty 8/29
+    // ---------prevents backButton dissmiss to main vc aswell 8/29
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if nameField.text! == "" || responseEditor.text! == "" {
+            nameField.text = "Enter a name and response"
+            return false
+        }
+        
+// change if changed player data store method - 8/30
+        names.append(nameField.text!)
+        responses.append(responseEditor.text!)
+        
+       
+        return true
+    }
     
     
     
