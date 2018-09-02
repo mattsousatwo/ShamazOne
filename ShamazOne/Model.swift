@@ -9,35 +9,16 @@
 import Foundation
 import GameKit
 
-// struct for player information to be stored in 8/27
-class Player {
-    var name: String = ""
-    var response: String = ""
-                                            // 8/30   need to put in table view to use Player data otherwise we will get a warning 
-    init(name: String, response: String) {
-        self.name = name
-        self.response = response
-    }
-    
-    
-}
 
-// empty dictionary to hold player and response information 8/27
-var players: [String: String] = ["": ""]
+// writting prompt arrays 8/26        ********** need to update promts to indicate a time frame
 
-
-// arrays to store datat 8/28 
-var names: [String] = []
-var responses: [String] = []
-
-// writting prompt arrays 8/26        ~ need to update promts to indicate a time frame 
 let futureWrittingPrompt: [String] = ["Does humanity have a future beyond Earth?",
                                       "Where will you be next month?",
-                                      "Where and when do you think we will find extraterrestrial life?",
-                                      "Will we ever understand consciousness?",
+                                      "Do you think we will find extraterrestrial life by 2050?",
+                                      "Will we understand consciousness in your lifetime?",
                                       "Will brain science change criminal law?",
                                       "What is the chance that humans will survive for another 500 years?",
-                                      "Will humans destroy the planet?",
+                                      "Will humans destroy the planet in the next 500 years?",
                                       "Will humans colonize space?",
                                       "Will we be able to predict natural disasters one day?" ]
 let pastWrittingPrompt: [String] = ["What did you do last summer?",
@@ -73,12 +54,15 @@ func stringToInt(string: String) -> Int {
     return a!
 }
 
-//changing the string value of savedNumber to Int
+//changing the string value of savedNumber to Int 8/30
 var newNumber = stringToInt(string: savedNumber)
 
-// generates random number with an upperbound of selected players
+// generates random number with an upperbound of selected players 8/30
 func randomNomination() -> Int {
-    let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: newNumber)
+    var randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: newNumber)
+    if randomNumber == 0 {
+        randomNumber = 1
+    }
     return randomNumber
     
 }

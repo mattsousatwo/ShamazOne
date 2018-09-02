@@ -32,6 +32,8 @@ class ResponseViewController: UIViewController {
 // text field for user to input data 8/26
     @IBOutlet weak var responseEditor: UITextField!
     
+// text field for user to input data 8/30
+    @IBOutlet weak var responseField: UITextView!
     
     
 // submit button - used for storeing user name and response 8/27
@@ -43,20 +45,24 @@ class ResponseViewController: UIViewController {
 // method to segue to nomination view only if nameField and responseEditor are not empty 8/29
     // ---------prevents backButton dissmiss to main vc aswell 8/29
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if nameField.text! == "" || responseEditor.text! == "" {
+        if nameField.text! == "" || responseField.text! == "" {
             nameField.text = "Enter a name and response"
             return false
         }
+    
         
-// change if changed player data store method - 8/30
-        names.append(nameField.text!)
-        responses.append(responseEditor.text!)
+        
+// changing to class data storage
+        let newResponse = Player(name: nameField.text!, response: responseField.text!, questionAsked: promptDisplay.text!)
+        
+        playerData.append(newResponse)
+        
+        
+        
         
        
         return true
     }
-    
-    
     
     
     

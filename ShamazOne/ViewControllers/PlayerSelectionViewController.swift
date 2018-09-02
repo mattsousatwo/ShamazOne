@@ -17,6 +17,8 @@ class PlayerSelectionViewController: UIViewController, UIPickerViewDataSource, U
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        startButton.isHidden = true
     }
 
     
@@ -28,6 +30,10 @@ class PlayerSelectionViewController: UIViewController, UIPickerViewDataSource, U
     
  // label to display selected number
     @IBOutlet weak var numberDisplay: UILabel!
+    
+// start button
+    @IBOutlet weak var startButton: UIButton!
+    
     
     
 // https://www.youtube.com/watch?v=tGr7qsKGkzY PickerVIew video  8/30
@@ -51,6 +57,7 @@ class PlayerSelectionViewController: UIViewController, UIPickerViewDataSource, U
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         numberDisplay.text = numbersArray[row]
         savedNumber = numberDisplay.text!
+        startButton.isHidden = false
     }
     
 

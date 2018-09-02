@@ -15,6 +15,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+// question for next player segue
+    @IBAction func nextQuestion(sender: UIStoryboardSegue) {}
+    
+    
 // past button 8/26
     @IBAction func pastButton(_ sender: Any) {}
        
@@ -35,8 +39,10 @@ class ViewController: UIViewController {
     }
     
     
+    
 // future button 8/26
     @IBAction func futureButton(_ sender: Any) {}
+    
     
     
     override func didReceiveMemoryWarning() {
