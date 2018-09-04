@@ -8,10 +8,22 @@
 
 import UIKit
 
+
+
 class NominationViewController: UIViewController {
+
+// Label that gives numberDisplay context
+    @IBOutlet weak var nextPlayerPromptLabel: UILabel!
     
 // Player nomination display - 8/30
     @IBOutlet weak var numberDisplay: UILabel!
+    
+// Next Button on screen
+    @IBOutlet weak var nextResponseButton: UIButton!
+    
+// Quit Button on screen
+    @IBOutlet weak var quitButton: UIButton!
+    
     
    
     

@@ -214,7 +214,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVQ-60-DIc">
-                                <rect key="frame" x="10" y="30" width="394" height="556"/>
+                                <rect key="frame" x="10" y="120" width="394" height="466"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="160"/>
                                 <nil key="textColor"/>
@@ -250,25 +250,40 @@
                                     <segue destination="7kX-vv-Jop" kind="unwind" unwindAction="nextQuestionWithSender:" id="Kbu-Rs-gUe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The next player is number:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="gIv-JE-NlZ">
+                                <rect key="frame" x="10" y="30" width="394" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Ugd-sB-1bl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="57"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9rz-7E-2LX" firstAttribute="bottom" secondItem="n3X-0H-gCI" secondAttribute="bottom" constant="10" id="5Mo-f2-sa9"/>
                             <constraint firstItem="n3X-0H-gCI" firstAttribute="top" secondItem="MkM-Mw-Ude" secondAttribute="bottom" constant="10" id="6uX-D8-xci"/>
-                            <constraint firstItem="BVQ-60-DIc" firstAttribute="top" secondItem="9rz-7E-2LX" secondAttribute="top" constant="10" id="8d8-wB-FBC"/>
+                            <constraint firstItem="9rz-7E-2LX" firstAttribute="trailing" secondItem="gIv-JE-NlZ" secondAttribute="trailing" constant="10" id="DCm-dB-Iwm"/>
                             <constraint firstItem="MkM-Mw-Ude" firstAttribute="top" secondItem="BVQ-60-DIc" secondAttribute="bottom" constant="10" id="DVY-rc-XBN"/>
                             <constraint firstItem="BVQ-60-DIc" firstAttribute="leading" secondItem="9rz-7E-2LX" secondAttribute="leading" constant="10" id="GLb-QQ-Jzj"/>
                             <constraint firstItem="MkM-Mw-Ude" firstAttribute="leading" secondItem="9rz-7E-2LX" secondAttribute="leading" constant="10" id="GyV-lT-h0K"/>
                             <constraint firstItem="9rz-7E-2LX" firstAttribute="trailing" secondItem="BVQ-60-DIc" secondAttribute="trailing" constant="10" id="JQI-ZD-RX1"/>
                             <constraint firstItem="9rz-7E-2LX" firstAttribute="trailing" secondItem="MkM-Mw-Ude" secondAttribute="trailing" constant="10" id="KS4-0R-mAJ"/>
                             <constraint firstItem="MkM-Mw-Ude" firstAttribute="top" secondItem="BVQ-60-DIc" secondAttribute="bottom" constant="10" id="NyM-8K-glr"/>
+                            <constraint firstItem="gIv-JE-NlZ" firstAttribute="leading" secondItem="9rz-7E-2LX" secondAttribute="leading" constant="10" id="Pzc-lA-9nM"/>
                             <constraint firstItem="n3X-0H-gCI" firstAttribute="leading" secondItem="9rz-7E-2LX" secondAttribute="leading" constant="10" id="SLx-Dd-qBc"/>
+                            <constraint firstItem="gIv-JE-NlZ" firstAttribute="top" secondItem="9rz-7E-2LX" secondAttribute="top" constant="10" id="dl8-xB-wdF"/>
+                            <constraint firstItem="BVQ-60-DIc" firstAttribute="top" secondItem="gIv-JE-NlZ" secondAttribute="bottom" constant="10" id="euF-9C-5Bb"/>
                             <constraint firstItem="9rz-7E-2LX" firstAttribute="trailing" secondItem="n3X-0H-gCI" secondAttribute="trailing" constant="10" id="xsc-FJ-gzp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9rz-7E-2LX"/>
                     </view>
                     <connections>
+                        <outlet property="nextPlayerPromptLabel" destination="gIv-JE-NlZ" id="K0x-8t-wNp"/>
+                        <outlet property="nextResponseButton" destination="MkM-Mw-Ude" id="pWz-J4-Ovr"/>
                         <outlet property="numberDisplay" destination="BVQ-60-DIc" id="aqh-pQ-d2b"/>
+                        <outlet property="quitButton" destination="n3X-0H-gCI" id="Hd5-bg-F3p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="loQ-8Q-ChF" userLabel="First Responder" sceneMemberID="firstResponder"/>
