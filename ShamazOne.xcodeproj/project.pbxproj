@@ -84,11 +84,11 @@
 		61BCF195213B8BCE00EEFB9C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				61ED735A2135A96200B860CB /* NominationViewController.swift */,
-				617513B621338C240056C83E /* ResponseViewController.swift */,
-				617513A421338BE00056C83E /* ViewController.swift */,
-				6193CBCB213A549A00AED1D8 /* ResultsTableViewController.swift */,
 				61720C1F21389F5000A1B9BB /* PlayerSelectionViewController.swift */,
+				617513A421338BE00056C83E /* ViewController.swift */,
+				617513B621338C240056C83E /* ResponseViewController.swift */,
+				61ED735A2135A96200B860CB /* NominationViewController.swift */,
+				6193CBCB213A549A00AED1D8 /* ResultsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

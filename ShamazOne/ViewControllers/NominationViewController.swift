@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+var displayText: String = ""
 
 class NominationViewController: UIViewController {
 
@@ -31,11 +31,36 @@ class NominationViewController: UIViewController {
         super.viewDidLoad()
 
 // setting Player Nomination display to the value of the number of players from PlayerSelectionVC - 8/30
-        numberDisplay.text = "\(randomNomination())"
         
+        displayText = "\(displayNumber)"
+        
+        
+        print(displayText)
+        numberDisplay.text = "\(showNumbers())"
+        
+        
+// moving player shown from the source array into a new array
+        shownPlayers.append((stringToInt(string: numberDisplay.text!)) - 1)
+        
+        // remove player from playerSourceArray 
+        
+        print("ShownPlayers ==== " + "\(shownPlayers)")
+        print("PlayerSourceArray ____" + "\(playerSourceArray)")
         // Do any additional setup after loading the view.
     }
-
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "nextQuestion" {
+            
+            
+            
+        }
+    }
+    
+    
+    
     
     
     

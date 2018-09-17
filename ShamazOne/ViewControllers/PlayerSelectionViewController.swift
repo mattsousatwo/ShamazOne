@@ -56,8 +56,17 @@ class PlayerSelectionViewController: UIViewController, UIPickerViewDataSource, U
 // selecting a row 8/30
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         numberDisplay.text = numbersArray[row]
-        savedNumber = numberDisplay.text!
+        
+    // changing numberDisplay to text
+        savedNumber = stringToInt(string: numberDisplay.text!)
         startButton.isHidden = false
+        
+    // new players array
+       playerSourceArray = newPlayersArray(upperBound: savedNumber)
+    
+    // printing array to console
+        print(playerSourceArray)
+        
     }
     
 

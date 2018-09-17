@@ -30,11 +30,17 @@ class ViewController: UIViewController {
             let pastPrompt = displayPastWrittingPrompt()
             nextVC.promptString = pastPrompt
             
+            
+            
+            
         } else if segue.identifier == "futureSegue" {
             
             let nextVC2 = segue.destination as! ResponseViewController
             let futurePrompt = displayFutureWrittingPrompt()
             nextVC2.promptString = futurePrompt
+            
+           
+            
         }
     }
     

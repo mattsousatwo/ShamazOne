@@ -15,4 +15,47 @@ import Foundation
 
 
 
+// function to display numbers in the next player nomination view
+
+func showNumbers() -> Int {
+    var numberShown = randomNomination()
+    for player in shownPlayers {
+        if player == numberShown {
+            switch numberShown {
+            case player:
+                while player == numberShown {
+                print("\(numberShown) : checkingNumber")
+                    numberShown = randomNomination()
+                print("\(numberShown) -> checkedNumber")
+                return numberShown
+                }
+                
+            default:
+                print("\(numberShown) -=> default")
+                return numberShown
+            }
+        }
+        else {
+             print("\(numberShown) :|:|: elseCase ")
+            return numberShown
+        }
+    }
+    print("\(numberShown) ::: FirstCase ")
+    return numberShown
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

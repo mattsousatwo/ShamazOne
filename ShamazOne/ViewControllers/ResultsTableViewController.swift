@@ -10,6 +10,9 @@ import UIKit
 
 class ResultsTableViewController: UITableViewController {
 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,10 +54,11 @@ class ResultsTableViewController: UITableViewController {
         
             let playerResponseDisplay = playerData[indexPath.row]
         
+        
             cell.textLabel?.text = playerResponseDisplay.name
             cell.detailTextLabel?.text = "\(playerResponseDisplay.questionAsked) - \(playerResponseDisplay.response)"
         
-   
+        
         return cell
     }
     

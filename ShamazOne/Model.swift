@@ -10,6 +10,15 @@ import Foundation
 import GameKit
 
 
+
+var displayNumber: Int = randomNomination()
+
+
+
+
+
+
+
 // writting prompt arrays 8/26        ********** need to update promts to indicate a time frame
 
 let futureWrittingPrompt: [String] = ["Does humanity have a future beyond Earth?",
@@ -34,7 +43,7 @@ let pastWrittingPrompt: [String] = ["What did you do last summer?",
                                     "What is your favortie sports team?"]
 
 // Universal String to store number selection  8/30
-var savedNumber = ""
+var savedNumber: Int = 0
 
 // generates random string from futureWrittingPrompt 8/26
 func displayFutureWrittingPrompt() -> String {
@@ -54,16 +63,66 @@ func stringToInt(string: String) -> Int {
     return a!
 }
 
-//changing the string value of savedNumber to Int 8/30
-var newNumber = stringToInt(string: savedNumber)
+
+// player creates a new Array containing number of players
+func newPlayersArray(upperBound: Int) -> [Int] {
+    let newArray = Array(1...upperBound)
+    return newArray
+}
+
+var playerSourceArray: [Int] = []
+
+
+
 
 // generates random number with an upperbound of selected players 8/30
 func randomNomination() -> Int {
-    var randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: newNumber)
-    if randomNumber == 0 {
-        randomNumber = 1
+    if playerSourceArray.count == 0 {
+        return 0
     }
-    return randomNumber
-    
+    let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: playerSourceArray.count)
+    let chosenNumber = playerSourceArray[randomNumber]
+   return chosenNumber
 }
+
+// func to check the player number being shown in the player nomination view
+func playerCheck() {
+    for player in shownPlayers {
+        if displayNumber == player {
+            switch displayNumber {
+            case player:
+                while displayNumber == player {
+                    let secondaryNumber = randomNomination()
+                    displayNumber = secondaryNumber
+                }
+            case 0:
+                displayText = "Game Over"
+            default:
+                displayText = "\(displayNumber)"
+            }
+        }
+    }
+}
+
+
+var shownPlayers: [Int] = []
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
