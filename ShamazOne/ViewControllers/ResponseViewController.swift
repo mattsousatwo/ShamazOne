@@ -54,15 +54,12 @@ class ResponseViewController: UIViewController {
         
         
         
-// changing to class data storage
+// storing all of the users information being input into playerData
         let newResponse = Player(name: nameField.text!, response: responseField.text!, questionAsked: promptDisplay.text!)
         
         playerData.append(newResponse)
         
-        
-        
-        
-       
+
         return true
     }
     

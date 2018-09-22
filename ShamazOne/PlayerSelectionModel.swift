@@ -8,17 +8,20 @@
 
 import Foundation
 
- var numbersArray = ["1","2","3","4","5","6","7","8","9","10"]
+ var numbersArray = ["2","3","4","5","6","7","8","9","10"]
 
 // var numbersArray = [1,2,3,4,5,6,7,8,9,10]
 
 
-
-
 // function to display numbers in the next player nomination view
 
-func showNumbers() -> Int {
+func showNumbers() -> Any {
     var numberShown = randomNomination()
+    
+    if numberShown == 0 {
+        return "Game Over"
+    }
+    
     for player in shownPlayers {
         if player == numberShown {
             switch numberShown {
@@ -37,7 +40,7 @@ func showNumbers() -> Int {
         }
         else {
              print("\(numberShown) :|:|: elseCase ")
-            return numberShown
+           return numberShown
         }
     }
     print("\(numberShown) ::: FirstCase ")

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-// question for next player segue
+// question for next player segue 9/22
     @IBAction func nextQuestion(sender: UIStoryboardSegue) {}
     
     
@@ -31,8 +31,6 @@ class ViewController: UIViewController {
             nextVC.promptString = pastPrompt
             
             
-            
-            
         } else if segue.identifier == "futureSegue" {
             
             let nextVC2 = segue.destination as! ResponseViewController
@@ -40,7 +38,6 @@ class ViewController: UIViewController {
             nextVC2.promptString = futurePrompt
             
            
-            
         }
     }
     

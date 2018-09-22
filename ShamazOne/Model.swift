@@ -9,38 +9,29 @@
 import Foundation
 import GameKit
 
-
-
-var displayNumber: Int = randomNomination()
-
-
-
-
-
-
-
-// writting prompt arrays 8/26        ********** need to update promts to indicate a time frame
-
-let futureWrittingPrompt: [String] = ["Does humanity have a future beyond Earth?",
-                                      "Where will you be next month?",
+// future writing prompts to be displayed 8/26
+let futureWrittingPrompt: [String] = ["How long will civilization last after your death?",
+                                      "Where will you be in two weeks?",
                                       "Do you think we will find extraterrestrial life by 2050?",
                                       "Will we understand consciousness in your lifetime?",
-                                      "Will brain science change criminal law?",
+                                      "Will America still have privatley owned prisions in 2030?",
                                       "What is the chance that humans will survive for another 500 years?",
                                       "Will humans destroy the planet in the next 500 years?",
-                                      "Will humans colonize space?",
-                                      "Will we be able to predict natural disasters one day?" ]
+                                      "Will humans colonize space in your childrens liftime?",
+                                      "Will global warming still be a threat in 2030?" ]
+
+// future writing prompts to be displayed 8/26
 let pastWrittingPrompt: [String] = ["What did you do last summer?",
-                                    "Where did you go on your favorite vacation?",
+                                    "Where did you go on vacation last year?",
                                     "What did you do for your last birthday?",
-                                    "What was the last difficult thing you had to do?",
-                                    "What was your last meal?",
+                                    "What was the most difficult thing you had to do in the last 48 hours?",
+                                    "What did you have for breakfast this morning?",
                                     "Who did you meet last week?",
                                     "What did you do over the last 24 hours?",
-                                    "What was your first TV like?",
-                                    "What was your first Computer like?",
-                                    "When was the last time you were shocked?",
-                                    "What is your favortie sports team?"]
+                                    "Did you have a computer before you were 10?",
+                                    "How many hours were you on your computer for yesterday?",
+                                    "Did you get scared by anyone yesterday? If so, how?",
+                                    "What was your favortie sports team when you were 10?"]
 
 // Universal String to store number selection  8/30
 var savedNumber: Int = 0
@@ -59,70 +50,42 @@ func displayPastWrittingPrompt() -> String {
 
 // converts string to Int 8/30
 func stringToInt(string: String) -> Int {
-    let a: Int? = Int(string)
-    return a!
+    switch string {
+    case "Game Over":
+        break
+    default:
+    let convert: Int? = Int(string)
+    return convert!
 }
-
+    // figure how to remove this line
+    return 0
+}
 
 // player creates a new Array containing number of players
 func newPlayersArray(upperBound: Int) -> [Int] {
-    let newArray = Array(1...upperBound)
+    let newArray = Array(2...upperBound)
     return newArray
 }
 
+// array to store the selected number of players
 var playerSourceArray: [Int] = []
-
-
-
 
 // generates random number with an upperbound of selected players 8/30
 func randomNomination() -> Int {
     if playerSourceArray.count == 0 {
         return 0
     }
-    let randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: playerSourceArray.count)
+    var randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: playerSourceArray.count)
+    for number in shownPlayers {
+        while number == randomNumber {
+            randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: playerSourceArray.count)
+        }
+    }
+    
     let chosenNumber = playerSourceArray[randomNumber]
    return chosenNumber
 }
 
-// func to check the player number being shown in the player nomination view
-func playerCheck() {
-    for player in shownPlayers {
-        if displayNumber == player {
-            switch displayNumber {
-            case player:
-                while displayNumber == player {
-                    let secondaryNumber = randomNomination()
-                    displayNumber = secondaryNumber
-                }
-            case 0:
-                displayText = "Game Over"
-            default:
-                displayText = "\(displayNumber)"
-            }
-        }
-    }
-}
-
-
+// array to store shown numbers in the nomination screen 9/22
 var shownPlayers: [Int] = []
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

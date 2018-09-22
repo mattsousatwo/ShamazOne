@@ -8,21 +8,24 @@
 
 import UIKit
 
-var displayText: String = ""
+var removeNumber = Int()
 
 class NominationViewController: UIViewController {
 
-// Label that gives numberDisplay context
+// Label that gives numberDisplay context 9/22
     @IBOutlet weak var nextPlayerPromptLabel: UILabel!
     
 // Player nomination display - 8/30
     @IBOutlet weak var numberDisplay: UILabel!
     
-// Next Button on screen
+// Next Button on screen 9/22
     @IBOutlet weak var nextResponseButton: UIButton!
     
-// Quit Button on screen
+// Quit Button on screen 9/22
     @IBOutlet weak var quitButton: UIButton!
+    
+// Quit Button Height Constraint 9/22
+    @IBOutlet weak var quitHeightConstraint: NSLayoutConstraint!
     
     
    
@@ -30,35 +33,39 @@ class NominationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-// setting Player Nomination display to the value of the number of players from PlayerSelectionVC - 8/30
-        
-        displayText = "\(displayNumber)"
-        
-        
-        print(displayText)
+// displaying a random number inside the numberDisplay Label - 9/22
         numberDisplay.text = "\(showNumbers())"
         
-        
-// moving player shown from the source array into a new array
-        shownPlayers.append((stringToInt(string: numberDisplay.text!)) - 1)
-        
-        // remove player from playerSourceArray 
-        
-        print("ShownPlayers ==== " + "\(shownPlayers)")
-        print("PlayerSourceArray ____" + "\(playerSourceArray)")
-        // Do any additional setup after loading the view.
-    }
-    
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "nextQuestion" {
-            
+// hiding next player button / expanding QuitButton & changing text / changing text of playerPromptLabel 9/22
+        if numberDisplay.text == "Game Over" {
+            nextPlayerPromptLabel.text = "Sorry but there are no more players"
+            nextResponseButton.isHidden = true
+            quitButton.setTitle("Results", for: .normal)
+            quitHeightConstraint.constant = 120
             
             
         }
+        
+
+    // changing numberDisplay to an Int 9/20
+        removeNumber = stringToInt(string: numberDisplay.text!)
+        
+    // loop to remove displayed Number from playerSourceArray and add to shownPlayers arrray  9/20
+        for player in playerSourceArray {
+            if removeNumber == player {
+                
+                let index = playerSourceArray.index(of: removeNumber)
+                shownPlayers.append(playerSourceArray[index!])
+
+                playerSourceArray.remove(at: index!)
+            }
+        }
+        
+// printing game info to console 9/222
+        print("ShownPlayers ==== " + "\(shownPlayers)")
+        print("PlayerSourceArray | | | | |   " + "\(playerSourceArray)")
+        // Do any additional setup after loading the view.
     }
-    
     
     
     

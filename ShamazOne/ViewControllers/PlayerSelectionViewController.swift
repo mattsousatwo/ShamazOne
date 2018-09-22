@@ -11,28 +11,40 @@ import UIKit
 
 class PlayerSelectionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-  
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        
-        startButton.isHidden = true
-    }
 
+// hiding the start button 9/22
+       begingButton.isHidden = true
+       
+        
+    }
+    
+// after the (start button has been pressed) selectionToQuestions segue has been triggered set start button to be hidden again and the text on screen to display 0 9/22
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "selectionToQuestion" {
+            begingButton.isHidden = true
+            numberDisplay.text = "0"
+        }
+    }
+    
+
+// unwind segue from results Page 9/22
+ @IBAction func playAgainSegue(sender: UIStoryboardSegue) {}
     
 // picker View 8/30
     @IBOutlet weak var pickerView: UIPickerView!
     
-// Dissmiss func 8/30
-    @IBAction func goToInitailView(sender: UIStoryboardSegue) {}
-    
- // label to display selected number
+ // label to display selected number 9/22
     @IBOutlet weak var numberDisplay: UILabel!
     
-// start button
-    @IBOutlet weak var startButton: UIButton!
+// start button 9/22
+    @IBOutlet weak var begingButton: UIButton! 
+    
+    
+    
     
     
     
@@ -59,9 +71,13 @@ class PlayerSelectionViewController: UIViewController, UIPickerViewDataSource, U
         
     // changing numberDisplay to text
         savedNumber = stringToInt(string: numberDisplay.text!)
-        startButton.isHidden = false
+       
+// startButton is shown
+        begingButton.isHidden = false
         
-    // new players array
+        
+        
+    //  createing a new players array to store number of players 
        playerSourceArray = newPlayersArray(upperBound: savedNumber)
     
     // printing array to console
@@ -87,3 +103,5 @@ class PlayerSelectionViewController: UIViewController, UIPickerViewDataSource, U
     */
 
 }
+
+
