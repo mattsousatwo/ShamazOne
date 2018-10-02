@@ -16,7 +16,13 @@ class ResponseViewController: UIViewController {
 // temp String == Labels text 8/27
         promptDisplay.text = promptString
         
+// clear textView while editing
+    //    responseEditor.clearButtonMode = .whileEditing
+        
+        
         // Do any additional setup after loading the view.
+        
+        
     }
     
 // label to display writting prompt depending on past/future 8/26

@@ -16,34 +16,13 @@ import Foundation
 // function to display numbers in the next player nomination view
 
 func showNumbers() -> Any {
-    var numberShown = randomNomination()
+    let numberShown = randomNomination()
     
     if numberShown == 0 {
         return "Game Over"
     }
-    
-    for player in shownPlayers {
-        if player == numberShown {
-            switch numberShown {
-            case player:
-                while player == numberShown {
-                print("\(numberShown) : checkingNumber")
-                    numberShown = randomNomination()
-                print("\(numberShown) -> checkedNumber")
-                return numberShown
-                }
-                
-            default:
-                print("\(numberShown) -=> default")
-                return numberShown
-            }
-        }
-        else {
-             print("\(numberShown) :|:|: elseCase ")
-           return numberShown
-        }
-    }
-    print("\(numberShown) ::: FirstCase ")
+
+    print("\(numberShown)")
     return numberShown
 }
 
