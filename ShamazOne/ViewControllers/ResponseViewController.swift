@@ -16,22 +16,27 @@ class ResponseViewController: UIViewController {
 // temp String == Labels text 8/27
         promptDisplay.text = promptString
         
+        
 // clear textView while editing
-    //    responseEditor.clearButtonMode = .whileEditing
+      responseField.clearsOnInsertion = true
         
         
         // Do any additional setup after loading the view.
         
+        // add UIToolBar on keyboard and Done Button on UIToolBar
+
         
     }
+ 
+
     
-// label to display writting prompt depending on past/future 8/26
+    // label to display writting prompt depending on past/future 8/26
     @IBOutlet weak var promptDisplay: UILabel!
     
-// created a temporary string to hold data being passed between ViewControllers 8/27
+    // created a temporary string to hold data being passed between ViewControllers 8/27
     var promptString: String = ""
     
-// textField for user to input name 8/27
+    // textField for user to input name 8/27
     @IBOutlet weak var nameField: UITextField!
     
     
@@ -46,7 +51,7 @@ class ResponseViewController: UIViewController {
     @IBAction func submit(_ sender: Any) {
     }
     
-    
+ 
         // needs to commit
 // method to segue to nomination view only if nameField and responseEditor are not empty 8/29
     // ---------prevents backButton dissmiss to main vc aswell 8/29
@@ -68,7 +73,6 @@ class ResponseViewController: UIViewController {
 
         return true
     }
-    
     
     
     

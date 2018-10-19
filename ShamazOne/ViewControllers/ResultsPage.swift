@@ -79,7 +79,7 @@ class ResultsPage: UIViewController , UITableViewDelegate , UITableViewDataSourc
 // setting the height for each row 9/17
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     

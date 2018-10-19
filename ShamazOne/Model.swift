@@ -14,13 +14,13 @@ let futureWrittingPrompt: [String] = ["How long will civilization last after you
                                       "Where will you be in two weeks?",
                                       "Do you think we will find extraterrestrial life by 2050?",
                                       "Will we understand consciousness in your lifetime?",
-                                      "Will America still have privatley owned prisions in 2030?",
+                                      "Will America still have privatley owned prisons in 2030?",
                                       "What is the chance that humans will survive for another 500 years?",
                                       "Will humans destroy the planet in the next 500 years?",
                                       "Will humans colonize space in your childrens liftime?",
                                       "Will global warming still be a threat in 2030?" ]
 
-// future writing prompts to be displayed 8/26
+// past writing prompts to be displayed 8/26
 let pastWrittingPrompt: [String] = ["What did you do last summer?",
                                     "Where did you go on vacation last year?",
                                     "What did you do for your last birthday?",
@@ -49,6 +49,7 @@ func displayPastWrittingPrompt() -> String {
 }
 
 // converts string to Int 8/30
+// catches string if == "Game Over" to then break out of func
 func stringToInt(string: String) -> Int {
     switch string {
     case "Game Over":
@@ -57,7 +58,6 @@ func stringToInt(string: String) -> Int {
     let convert: Int? = Int(string)
     return convert!
 }
-    // figure how to remove this line
     return 0
 }
 

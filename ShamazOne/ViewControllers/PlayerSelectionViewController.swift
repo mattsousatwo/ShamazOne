@@ -22,7 +22,7 @@ class PlayerSelectionViewController: UIViewController, UIPickerViewDataSource, U
         
     }
     
-// after the (start button has been pressed) selectionToQuestions segue has been triggered set start button to be hidden again and the text on screen to display 0 9/22
+// after the (start button has been pressed) selectionToQuestions segue has been triggered set start button to be hidden again and the text on screen to display "0" 9/22
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectionToQuestion" {
             begingButton.isHidden = true
@@ -74,7 +74,6 @@ class PlayerSelectionViewController: UIViewController, UIPickerViewDataSource, U
        
 // startButton is shown
         begingButton.isHidden = false
-        
         
         
     //  createing a new players array to store number of players 
